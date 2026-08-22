@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Md Faraz Zahir</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <span class="logo">MFZ</span>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <h1 class="page-title">Projects</h1>
+
+    <div class="card">
+      <p class="cat">Computer Vision</p>
+      <h3>Smart Retail Inventory &amp; Quality Assurance System</h3>
+      <p>Modular CV pipeline pairing YOLOv9 for real-time SKU localisation with
+         EfficientNetB0 for spoilage detection. Trained a transfer-learning
+         classifier on 29,000+ images to 98.7% accuracy on fresh vs. rotten
+         produce — an estimated 18% cut in operational food waste.</p>
+      <p class="stack">YOLOv9 · EfficientNetB0 · Transfer Learning · PyTorch</p>
+      <a href="#" class="btn small">GitHub</a>
+    </div>
+
+    <div class="card">
+      <p class="cat">MLOps / Streaming</p>
+      <h3>Real-Time Fraud Detection System</h3>
+      <p>Streaming fraud detection pipeline scaling to 10,000+ transactions/sec,
+         achieving 93% ROC-AUC on imbalanced financial data. Containerised APIs
+         with SMOTE-based imbalance handling secured 89% recall on fraud.</p>
+      <p class="stack">PySpark · XGBoost · SMOTE · FastAPI · Docker</p>
+      <a href="#" class="btn small">GitHub</a>
+    </div>
+
+    <div class="card">
+      <p class="cat">Data Science</p>
+      <h3>Customer Lifetime Value &amp; Segmentation Engine</h3>
+      <p>ML engine predicting 12-month CLV by combining RFM analysis with
+         regression. Shipped a Streamlit app to filter K-Means cohorts and export
+         outreach lists — contributing to a 12% lift in campaign conversion.</p>
+      <p class="stack">Python · K-Means · Streamlit · scikit-learn</p>
+      <a href="#" class="btn small">GitHub</a>
+    </div>
+  </main>
+
+  <footer>© 2026 Md Faraz Zahir</footer>
+</body>
+</html>
