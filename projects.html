@@ -8,7 +8,7 @@
 </head>
 <body>
   <nav>
-    <span class="logo">MFZ</span>
+    <a href="index.html" class="logo">MFZ</a>
     <div class="links">
       <a href="index.html">Home</a>
       <a href="projects.html" class="active">Projects</a>
@@ -18,39 +18,107 @@
 
   <main class="page">
     <h1 class="page-title">Projects</h1>
+    <p class="intro">Production-style builds — each one runnable, tested, and documented.</p>
 
+    <!-- 1 -->
     <div class="card">
-      <p class="cat">Computer Vision</p>
-      <h3>Smart Retail Inventory &amp; Quality Assurance System</h3>
-      <p>Modular CV pipeline pairing YOLOv9 for real-time SKU localisation with
-         EfficientNetB0 for spoilage detection. Trained a transfer-learning
-         classifier on 29,000+ images to 98.7% accuracy on fresh vs. rotten
-         produce — an estimated 18% cut in operational food waste.</p>
-      <p class="stack">YOLOv9 · EfficientNetB0 · Transfer Learning · PyTorch</p>
-      <a href="#" class="btn small">GitHub</a>
+      <p class="cat">AI / NLP · Full Stack</p>
+      <h3>Matchwise — Explainable CV-to-Job Matching</h3>
+      <p>A local-first recommendation engine that ranks candidates for a job (and jobs
+         for a candidate) using a hybrid score: <strong>50% sentence-embedding semantic
+         similarity, 30% skill coverage, 20% keyword similarity</strong>. Every result
+         ships with component scores, matched skills, missing signals and a
+         plain-language explanation — built deliberately as decision support, not an
+         automated hiring decision. Zero-download feature-hashing embedder by default,
+         with optional <code>all-MiniLM-L6-v2</code> via Sentence Transformers.</p>
+      <p class="stack">FastAPI · React · Sentence Transformers · Docker · pytest</p>
+      <a href="https://github.com/FarazAI07/Job_Recommendation" class="btn small">GitHub →</a>
     </div>
 
+    <!-- 2 -->
     <div class="card">
-      <p class="cat">MLOps / Streaming</p>
-      <h3>Real-Time Fraud Detection System</h3>
-      <p>Streaming fraud detection pipeline scaling to 10,000+ transactions/sec,
-         achieving 93% ROC-AUC on imbalanced financial data. Containerised APIs
-         with SMOTE-based imbalance handling secured 89% recall on fraud.</p>
-      <p class="stack">PySpark · XGBoost · SMOTE · FastAPI · Docker</p>
-      <a href="#" class="btn small">GitHub</a>
+      <p class="cat">MLOps · Production ML</p>
+      <h3>Customer Churn Prediction System</h3>
+      <p>End-to-end telecom churn platform covering the full lifecycle: reproducible
+         data generation, validation, EDA, model comparison, MLflow tracking, and a
+         FastAPI service. Preprocessing and classifier are persisted as a single
+         scikit-learn <code>Pipeline</code> to prevent training/serving skew. Includes
+         <strong>drift monitoring via PSI (numeric) and total variation distance
+         (categorical)</strong>, version-aware reference distributions, Kubernetes
+         manifests, and CI/CD workflows.</p>
+      <p class="stack">scikit-learn · MLflow · FastAPI · Docker · Kubernetes · GitHub Actions</p>
+      <a href="https://github.com/FarazAI07/Churn_Prediction_" class="btn small">GitHub →</a>
     </div>
 
+    <!-- 3 -->
     <div class="card">
-      <p class="cat">Data Science</p>
-      <h3>Customer Lifetime Value &amp; Segmentation Engine</h3>
-      <p>ML engine predicting 12-month CLV by combining RFM analysis with
-         regression. Shipped a Streamlit app to filter K-Means cohorts and export
-         outreach lists — contributing to a 12% lift in campaign conversion.</p>
-      <p class="stack">Python · K-Means · Streamlit · scikit-learn</p>
-      <a href="#" class="btn small">GitHub</a>
+      <p class="cat">MLOps · Infrastructure</p>
+      <h3>Dockerised ML Pipeline Platform</h3>
+      <p>An eight-service Docker Compose application orchestrating the whole ML
+         lifecycle: <code>prepare → train → evaluate</code> stages, an MLflow tracking
+         server, a FastAPI inference API with sync and async endpoints, PostgreSQL for
+         prediction storage, and <strong>Redis + RQ background workers</strong> for
+         queued jobs. Health checks gate service startup; secrets and artifacts stay
+         out of Git.</p>
+      <p class="stack">Docker Compose · Random Forest · MLflow · FastAPI · PostgreSQL · Redis/RQ</p>
+      <a href="https://github.com/FarazAI07/compose-ml-pipeline" class="btn small">GitHub →</a>
     </div>
+
+    <!-- 4 -->
+    <div class="card">
+      <p class="cat">NLP · Machine Learning</p>
+      <h3>E-Commerce Product Text Classification</h3>
+      <p>Multi-class classification predicting product category from noisy real-world
+         descriptions across <strong>~50,000 records</strong>. Benchmarks three text
+         representations head-to-head — Bag of Words (uni/bigrams), TF-IDF, and
+         Word2Vec/GloVe embeddings — showing embedding-based models capture semantic
+         meaning far better than frequency-based approaches.</p>
+      <p class="stack">Python · scikit-learn · Gensim · Word2Vec / GloVe · TF-IDF</p>
+      <a href="https://github.com/FarazAI07/NLP-Text-Classification" class="btn small">GitHub →</a>
+    </div>
+
+    <!-- 5 -->
+    <div class="card">
+      <p class="cat">NLP · Unsupervised Learning</p>
+      <h3>News Topic Modelling &amp; NLP Analysis</h3>
+      <p>Uncovers latent themes in technology journalism using <strong>LDA and NMF</strong>
+         side by side — a probabilistic model on a Bag-of-Words corpus versus matrix
+         factorisation on TF-IDF. Advanced spaCy preprocessing with lemmatisation, plus
+         targeted removal of generic journalistic filler ("said", "told") to sharpen
+         topic separation. Surfaced clusters spanning AI innovation, regulation,
+         industrial automation, ethics and data privacy.</p>
+      <p class="stack">spaCy · scikit-learn · LDA · NMF · WordCloud · Seaborn</p>
+      <a href="https://github.com/FarazAI07/News-Analysis" class="btn small">GitHub →</a>
+    </div>
+
+    <!-- 6 -->
+    <div class="card">
+      <p class="cat">Recommender Systems</p>
+      <h3>MoodMix — Explainable Music Recommender</h3>
+      <p>A fully local Streamlit app that builds playlists for four moods — Happy, Calm,
+         Focused and Energetic — by ranking tracks on interpretable audio features
+         (energy, valence, danceability, tempo, acousticness) with genre filtering,
+         mood-match scores and a written explanation per recommendation. Runs offline
+         with a swappable CSV catalogue, no commercial API dependency.</p>
+      <p class="stack">Python · Streamlit · pandas · unittest</p>
+      <a href="https://github.com/FarazAI07/Music_Recommendation" class="btn small">GitHub →</a>
+    </div>
+
+    <!-- 7 -->
+    <div class="card wip">
+      <p class="cat">AI / RAG · In Progress 🚧</p>
+      <h3>RAG Health Database</h3>
+      <p>Retrieval-augmented generation over a structured health knowledge base —
+         currently in early development.</p>
+      <p class="stack">RAG · LLMs · Vector Search</p>
+      <a href="https://github.com/FarazAI07/RAG-Health_Database" class="btn small">GitHub →</a>
+    </div>
+
+    <p class="more">
+      More on <a href="https://github.com/FarazAI07">github.com/FarazAI07</a>
+    </p>
   </main>
 
-  <footer>© 2026 Md Faraz Zahir</footer>
+  <footer>© 2026 Md Faraz Zahir · Manchester, UK</footer>
 </body>
 </html>
